@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Pirata+One|Rubik:900');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ff6161;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #c54b4b;    
+}
+::-webkit-scrollbar-track{
+    background: rgba(17, 17, 17, 0.8);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #303030;
+}
+
+#top {
+    display: flex;
+    background-color: black;
+    min-height: 100vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.8)
+    ),url(../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    border-bottom: 2px solid #ff6161;
+}
+
+
+header {
+    height: 70px;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+
+.logo {
+    margin-left: 30px;
+}
+
+nav {
+    width: 100%;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.active {
+    color: #ff6161;
+    border-bottom: 1px solid white;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #ff6161;
+  height: 1px;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+nav .openMenu {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+nav .mainMenu .closeMenu {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+
+
+#top div {
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+#top div h1 {
+    font-family: 'Rubik', sans-serif;
+    align-self: center;
+    color: #ff6161;
+}
+
+.name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem;
+}
+
+
+
+main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 80px;
+    grid-template-areas: 
+    "info"
+    "footer";
+}
+
+main section {
+    grid-area: info;
+}
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    border-top: 5px solid #ff6161;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.contact-links a{
+    color: #ff6161;
+}
+
+.contact-links a i {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 620px){
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+    }
+
+    nav .openMenu {
+        display: block;
+    }
+
+    nav li {
+        margin: 20px;
+    }
+}
